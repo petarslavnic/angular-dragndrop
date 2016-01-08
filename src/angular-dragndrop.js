@@ -68,7 +68,7 @@
            * Bind drag handle events
            */
           function bindDragHandleEvents() {
-            elem.addClass(dragHandleClass);
+            elem.classList.add(dragHandleClass);
             elem.bind('mousedown', onMouseDown);
             elem.bind('mouseup', onMouseUp);
           }
@@ -77,7 +77,7 @@
            * Unbind drag handle events
            */
           function unbindDragHandleEvents() {
-            elem.removeClass(dragHandleClass);
+            elem.classList.remove(dragHandleClass);
             elem.unbind('mousedown', onMouseDown);
             elem.unbind('mouseup', onMouseUp);
           }
@@ -120,7 +120,7 @@
            * @param event
            */
           function onDragStart(event) {
-            elem.addClass(draggingClass); // need to be jQuery independent
+            elem.classList.add(draggingClass);
             ctrl.dragAndDropService.onDragStart(event, dragData);
           }
 
@@ -133,7 +133,7 @@
             if (ctrl.dragHandlerExist()) {
               unbindDragEvents();
             }
-            elem.removeClass(draggingClass); // need to be jQuery independent
+            elem.classList.remove(draggingClass);
             ctrl.dragAndDropService.onDragEnd(event, dragData);
           }
 
@@ -144,7 +144,7 @@
             elem.bind('dragstart', onDragStart);
             elem.bind('dragend', onDragEnd);
             elem.attr('draggable', true);
-            elem.addClass(dragHandleClass); // need to be jQuery independent
+            elem.classList.add(dragHandleClass);
           }
 
           /**
@@ -154,7 +154,7 @@
             elem.unbind('dragstart', onDragStart);
             elem.unbind('dragend', onDragEnd);
             elem.attr('draggable', false);
-            elem.removeClass(dragHandleClass); // need to be jQuery independent
+            elem.classList.remove(dragHandleClass);
           }
 
           ctrl.bindDragEvents = bindDragEvents;
@@ -191,7 +191,7 @@
            * @param event
            */
           function onDragEnter(event) {
-            elem.addClass(dragOverClass); // need to be jQuery independent
+            elem.classList.add(dragOverClass);
             ctrl.dragAndDropService.onDragEnter(event, dropData);
           }
 
@@ -206,7 +206,7 @@
               event.preventDefault(); // Necessary. Allows us to drop.
             }
 
-            elem.addClass(dragOverClass); // need to be jQuery independent
+            elem.classList.add(dragOverClass);
 
             event.dataTransfer.dropEffect = 'move';
 
@@ -221,7 +221,7 @@
            * @param event
            */
           function onDragLeave(event) {
-            elem.removeClass(dragOverClass); // need to be jQuery independent
+            elem.classList.remove(dragOverClass);
             ctrl.dragAndDropService.onDragLeave(event, dropData);
           }
 
@@ -236,7 +236,7 @@
               event.stopPropagation(); // stops the browser from redirecting.
             }
 
-            elem.removeClass(dragOverClass); // need to be jQuery independent
+            elem.classList.remove(dragOverClass);
 
             ctrl.dragAndDropService.onDrop(event, dropData);
 
@@ -251,7 +251,7 @@
             elem.bind('dragleave', onDragLeave);
             elem.bind('dragover', onDragOver);
             elem.bind('drop', onDrop);
-            elem.addClass(acceptDropClass);
+            elem.classList.add(acceptDropClass);
           }
 
           /**
@@ -262,7 +262,7 @@
             elem.unbind('dragleave', onDragLeave);
             elem.unbind('dragover', onDragOver);
             elem.unbind('drop', onDrop);
-            elem.removeClass(acceptDropClass);
+            elem.classList.remove(acceptDropClass);
           }
 
           attrs.$observe('angDropData', function(value) {
