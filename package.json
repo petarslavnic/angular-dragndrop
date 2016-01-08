@@ -6,7 +6,7 @@
   "main": "src/angular-dragndrop.js",
   "license": "MIT",
   "dependencies" : { 
-    "angular": "~1.x"
+    "angular": "~1.3.x"
   },
   "devDependencies": {
     "jshint": "latest",
