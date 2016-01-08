@@ -1,0 +1,37 @@
+{
+  "name": "angular-dragndrop",
+  "version": "0.1.1",
+  "description": "HTML5 Drag and Drop AngularJS module",
+  "author": "Petar Slavnic <petarslavnic@gmail.com>",
+  "main": "src/angular-dragndrop.js",
+  "license": "MIT",
+  "dependencies" : { 
+    "angular": "~1.x"
+  },
+  "devDependencies": {
+    "jshint": "latest",
+    "browserify": "latest",
+    "mocha": "latest"
+  },
+  "scripts": {
+    "clean": "rm -r dist/*",
+    "lint": "jshint src/**.js",
+    "build": "browserify src/angular-dragndrop.js > dist/angular-dragndrop.min.js",
+    "prepublish": "npm run build",    
+    "prebuild": "npm run lint",
+  },
+  "repository" : { 
+    "type" : "git", 
+    "url" : "https://github.com/petarslavnic/angular-dragndrop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/petarslavnic/angular-dragndrop/issues"
+  },
+  "keywords": [
+    "angular",
+    "module",
+    "drag",
+    "drop",
+    "javascript"
+  ],
+}
