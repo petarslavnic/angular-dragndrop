@@ -18,7 +18,7 @@
     "lint": "jshint src/**.js",
     "build": "browserify src/angular-dragndrop.js > dist/angular-dragndrop.min.js",
     "prepublish": "npm run build",    
-    "prebuild": "npm run lint",
+    "prebuild": "npm run lint"
   },
   "repository" : { 
     "type" : "git", 
@@ -33,5 +33,5 @@
     "drag",
     "drop",
     "javascript"
-  ],
+  ]
 }
